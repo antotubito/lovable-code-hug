@@ -16,7 +16,7 @@ Dislink helps you maintain meaningful connections by tracking where, when, and h
 
 ## Repository
 
-This project is connected to: https://github.com/antotubito/DISLINK_BOLT.NEW_Completed
+This project is connected to: https://github.com/antotubito/Dislink_Bolt_V2
 
 ## Development
 
