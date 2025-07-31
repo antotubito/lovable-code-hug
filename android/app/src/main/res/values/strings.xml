@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Dislink</string>
+    <string name="title_activity_main">Dislink</string>
+    <string name="package_name">com.dislink.app</string>
+    <string name="custom_url_scheme">com.dislink.app</string>
+</resources>

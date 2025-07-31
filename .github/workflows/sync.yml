@@ -1,0 +1,26 @@
+name: Sync Repository
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+      
+      - name: Push to target repository
+        run: |
+          git remote add target https://${{ secrets.GH_PAT }}@github.com/antotubito/DISLINK_BOLT.NEW_Completed.git
+          git push target main:main --force
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}

@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  /* ... (keep existing base styles) */
+
+  /* Improved Animation Settings */
+  .page-transition-enter {
+    opacity: 0;
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  /* Prevent Content Jump */
+  .overflow-fix {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased;
+  }
+
+  /* Prevent Layout Shift */
+  body {
+    @apply min-h-screen overflow-x-hidden;
+  }
+
+  /* Force Hardware Acceleration */
+  .hw-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Mobile App Specific Styles */
+  .transparent-background {
+    background-color: transparent !important;
+  }
+  
+  /* Safe area insets for mobile devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Status bar styles for iOS */
+  .ios-status-bar-padding {
+    padding-top: 20px; /* Default status bar height */
+    padding-top: env(safe-area-inset-top); /* Use safe area if available */
+  }
+  
+  /* Bottom navigation padding for iOS */
+  .ios-bottom-padding {
+    padding-bottom: 34px; /* Default home indicator height */
+    padding-bottom: env(safe-area-inset-bottom); /* Use safe area if available */
+  }
+  
+  /* Highlight effect for waitlist form */
+  .highlight-form {
+    animation: highlight-pulse 2s ease-in-out;
+  }
+  
+  @keyframes highlight-pulse {
+    0% { 
+      box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 0 10px rgba(99, 102, 241, 0.1);
+      transform: scale(1.02);
+    }
+    100% { 
+      box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+      transform: scale(1);
+    }
+  }
+  
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+}
+
+/* ... (keep rest of the file unchanged) */
